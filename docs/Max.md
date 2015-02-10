@@ -1,14 +1,14 @@
 # Max
 
 - `v::max(mixed $maxValue)`
-- `v::max(mixed $maxValue, boolean $inclusive = false)`
+- `v::max(mixed $maxValue, boolean $inclusive = true)`
 
 Validates if the input doesn't exceed the maximum value.
 
 ```php
 v::int()->max(15)->validate(20); //false
-v::int()->max(20)->validate(20); //false
-v::int()->max(20, true)->validate(20); //true
+v::int()->max(20)->validate(20); //true
+v::int()->max(20, false)->validate(20); //false
 ```
 
 Also accepts dates:
@@ -24,10 +24,10 @@ Also date intervals:
 v::date()->max('-18 years')->validate('1988-09-09'); //true
 ```
 
-`true` may be passed as a parameter to indicate that inclusive
+`false` may be passed as a parameter to indicate that non-inclusive
 values must be used.
 
-Message template for this validator includes `{{maxValue}}`.
+Message template for this validator includes `{{interval}}`.
 
 See also:
 

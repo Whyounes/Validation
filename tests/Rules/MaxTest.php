@@ -59,4 +59,11 @@ class MaxTest extends \PHPUnit_Framework_TestCase
             array(200, false, 200),
         );
     }
+
+    public function testShouldBeInclusiveByDefault()
+    {
+        $rule = new Max(1);
+
+        $this->assertTrue($rule->validate(1));
+    }
 }
