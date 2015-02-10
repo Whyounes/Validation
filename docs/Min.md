@@ -1,14 +1,14 @@
 # Min
 
 - `v::min(mixed $minValue)`
-- `v::min(mixed $minValue, boolean $inclusive = false)`
+- `v::min(mixed $minValue, boolean $inclusive = true)`
 
 Validates if the input is greater than the minimum value.
 
 ```php
 v::int()->min(15)->validate(5); //false
-v::int()->min(5)->validate(5); //false
-v::int()->min(5, true)->validate(5); //true
+v::int()->min(5)->validate(5); //true
+v::int()->min(5, false)->validate(5); //false
 ```
 
 Also accepts dates:
@@ -17,10 +17,10 @@ Also accepts dates:
 v::date()->min('2012-01-01')->validate('2015-01-01'); //true
 ```
 
-`true` may be passed as a parameter to indicate that inclusive
+`false` may be passed as a parameter to indicate that non-inclusive
 values must be used.
 
-Message template for this validator includes `{{minValue}}`.
+Message template for this validator includes `{{interval}}`.
 
 See also:
 

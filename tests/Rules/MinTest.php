@@ -67,4 +67,11 @@ class MinTest extends \PHPUnit_Framework_TestCase
             array(50, false, 50),
         );
     }
+
+    public function testShouldBeInclusiveByDefault()
+    {
+        $rule = new Min(1);
+
+        $this->assertTrue($rule->validate(1));
+    }
 }
