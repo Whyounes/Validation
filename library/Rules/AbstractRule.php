@@ -13,6 +13,7 @@ namespace Respect\Validation\Rules;
 
 use Respect\Validation\Validatable;
 use Respect\Validation\Exceptions\ValidationException;
+use Respect\Validation\RequiredValidatable;
 
 abstract class AbstractRule implements Validatable
 {
@@ -28,7 +29,7 @@ abstract class AbstractRule implements Validatable
 
     public function __invoke($input)
     {
-        return !is_a($this, __NAMESPACE__.'\\NotEmpty')
+        return !$this instanceof RequiredValidatable
             && $input === '' || $this->validate($input);
     }
 
