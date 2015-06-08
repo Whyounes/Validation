@@ -11,12 +11,15 @@
 
 namespace Respect\Validation\Rules;
 
-use Respect\Validation\Validatable;
 use Respect\Validation\Exceptions\ValidationException;
+use Respect\Validation\Helpers\NotOptionalHelper;
 use Respect\Validation\RequiredValidatable;
+use Respect\Validation\Validatable;
 
 abstract class AbstractRule implements Validatable
 {
+    use NotOptionalHelper;
+
     protected $name;
     protected $template = null;
 
@@ -29,8 +32,7 @@ abstract class AbstractRule implements Validatable
 
     public function __invoke($input)
     {
-        return !$this instanceof RequiredValidatable
-            && $input === '' || $this->validate($input);
+        return !$this instanceof RequiredValidatable && !$this->isNotOptional($input) || $this->validate($input);
     }
 
     public function addOr()
