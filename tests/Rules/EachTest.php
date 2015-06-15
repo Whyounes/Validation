@@ -51,7 +51,7 @@ class EachTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidatorShouldNotPassWithOnlyKeyValidation()
     {
-        $v = new Each(null, new String());
+        $v = new Each(null, new Str());
         $result = $v->assert(array('a', 'b', 'c', 'd', 'e'));
         $this->assertTrue($result);
     }

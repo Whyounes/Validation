@@ -15,7 +15,7 @@ The type as the first validator in a chain is a good practice,
 since between accepts many types:
 
 ```php
-v::string()->between('a', 'f')->validate('c'); //true
+v::str()->between('a', 'f')->validate('c'); //true
 ```
 
 Also very powerful with dates:

@@ -7,7 +7,7 @@ required. This function also takes whitespace into account, use `noWhitespace()`
 if no spaces or linebreaks and other whitespace anywhere in the input is desired.
 
 ```php
-v::string()->notEmpty()->validate(''); //false
+v::str()->notEmpty()->validate(''); //false
 ```
 
 Null values are empty:
@@ -31,8 +31,8 @@ v::arr()->notEmpty()->validate(array()); //false
 Whitespace:
 
 ```php
-v::string()->notEmpty()->validate('        ');  //false
-v::string()->notEmpty()->validate("\t \n \r");  //false
+v::str()->notEmpty()->validate('        ');  //false
+v::str()->notEmpty()->validate("\t \n \r");  //false
 ```
 
 See also:

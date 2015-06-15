@@ -41,7 +41,7 @@ $user->birthdate = '1987-07-01';
 Is possible to validate its attributes in a single chain:
 
 ```php
-$userValidator = v::attribute('name', v::string()->length(1,32))
+$userValidator = v::attribute('name', v::str()->length(1,32))
                   ->attribute('birthdate', v::date()->age(18));
 
 $userValidator->validate($user); //true
@@ -49,7 +49,7 @@ $userValidator->validate($user); //true
 
 Validating array keys is also possible using `v::key()`
 
-Note that we used `v::string()` and `v::date()` in the beginning of the validator.
+Note that we used `v::str()` and `v::date()` in the beginning of the validator.
 Although is not mandatory, it is a good practice to use the type of the
 validated object as the first node in the chain.
 
@@ -62,7 +62,7 @@ We use the `v::notOptional()` validator prefixed to disallow empty input and eff
 define the field as mandatory as input will be required or validation will fail.
 
 ```php
-v::string()->notOptional()->validate(''); //false input required
+v::str()->notOptional()->validate(''); //false input required
 ```
 
 ## Negating Rules

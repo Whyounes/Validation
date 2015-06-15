@@ -23,7 +23,7 @@ v::key('foo', v::equals('bar'))->validate($dict); //true
 Third parameter makes the key presence optional:
 
 ```php
-v::key('lorem', v::string(), false)->validate($dict); // true
+v::key('lorem', v::str(), false)->validate($dict); // true
 ```
 
 The name of this validator is automatically set to the key name.

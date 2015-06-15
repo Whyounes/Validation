@@ -74,9 +74,9 @@ class AbstractNestedExceptionTest extends \PHPUnit_Framework_TestCase
 
     public function testFindMessagesShouldReturnCompositeValidationMessagesFlattened()
     {
-        $stringMax256 = v::string()->length(5, 256);
+        $stringMax256 = v::str()->length(5, 256);
         $alnumDot = v::alnum('.');
-        $stringMin8 = v::string()->length(8, null);
+        $stringMin8 = v::str()->length(8, null);
         $v = v::allOf(
                 v::attribute('first_name', $stringMax256)->setName('First Name'),
                 v::attribute('last_name', $stringMax256)->setName('Last Name'),
@@ -113,9 +113,9 @@ class AbstractNestedExceptionTest extends \PHPUnit_Framework_TestCase
 
     public function testFindMessagesShouldApplyTemplatesToFlattenedMessages()
     {
-        $stringMax256 = v::string()->length(5, 256);
+        $stringMax256 = v::str()->length(5, 256);
         $alnumDot = v::alnum('.');
-        $stringMin8 = v::string()->length(8, null);
+        $stringMin8 = v::str()->length(8, null);
         $v = v::allOf(
                 v::attribute('first_name', $stringMax256)->setName('First Name'),
                 v::attribute('last_name', $stringMax256)->setName('Last Name'),

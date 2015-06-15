@@ -54,7 +54,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     public function testGetFullMessageShouldIncludeAllValidationMessagesInAChain()
     {
         try {
-            Validator::string()->length(1, 15)->assert('');
+            Validator::str()->length(1, 15)->assert('');
         } catch (NestedValidationExceptionInterface $e) {
             $this->assertEquals('\-These rules must pass for ""
   \-"" must have a length between 1 and 15', $e->getFullMessage());

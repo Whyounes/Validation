@@ -11,19 +11,19 @@
 
 namespace Respect\Validation\Rules;
 
-class StringTest extends \PHPUnit_Framework_TestCase
+class StrTest extends \PHPUnit_Framework_TestCase
 {
     protected $object;
 
     protected function setUp()
     {
-        $this->object = new String();
+        $this->object = new Str();
     }
 
     /**
-     * @dataProvider providerForString
+     * @dataProvider providerForStr
      */
-    public function testString($input)
+    public function testStr($input)
     {
         $this->assertTrue($this->object->validate($input));
         $this->assertTrue($this->object->check($input));
@@ -31,16 +31,16 @@ class StringTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider providerForNotString
-     * @expectedException Respect\Validation\Exceptions\StringException
+     * @dataProvider providerForNotStr
+     * @expectedException Respect\Validation\Exceptions\StrException
      */
-    public function testNotString($input)
+    public function testNotStr($input)
     {
         $this->assertFalse($this->object->validate($input));
         $this->assertFalse($this->object->assert($input));
     }
 
-    public function providerForString()
+    public function providerForStr()
     {
         return array(
             array(''),
@@ -48,7 +48,7 @@ class StringTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function providerForNotString()
+    public function providerForNotStr()
     {
         return array(
             array(null),
