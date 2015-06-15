@@ -19,7 +19,7 @@ v::notOptional()->validate(null); //false
 Numbers:
 
 ```php
-v::int()->notOptional()->validate(0); //false
+v::integer()->notOptional()->validate(0); //false
 ```
 
 Optional arrays:

@@ -63,7 +63,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function testNotShouldWorkByBuilder()
     {
-        $this->assertFalse(Validator::not(Validator::int())->validate(10));
+        $this->assertFalse(Validator::not(Validator::integer())->validate(10));
     }
     public function testCountryCode()
     {

@@ -6,9 +6,9 @@
 Validates if the input is greater than the minimum value.
 
 ```php
-v::int()->min(15)->validate(5); //false
-v::int()->min(5)->validate(5); //true
-v::int()->min(5, false)->validate(5); //false
+v::integer()->min(15)->validate(5); //false
+v::integer()->min(5)->validate(5); //true
+v::integer()->min(5, false)->validate(5); //false
 ```
 
 Also accepts dates:

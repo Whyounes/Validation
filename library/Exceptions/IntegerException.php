@@ -11,7 +11,7 @@
 
 namespace Respect\Validation\Exceptions;
 
-class IntException extends ValidationException
+class IntegerException extends ValidationException
 {
     public static $defaultTemplates = array(
         self::MODE_DEFAULT => array(

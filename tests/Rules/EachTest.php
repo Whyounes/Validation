@@ -26,7 +26,7 @@ class EachTest extends \PHPUnit_Framework_TestCase
 
     public function testValidatorShouldPassIfEveryArrayItemAndKeyPass()
     {
-        $v = new Each(new Alpha(), new Int());
+        $v = new Each(new Alpha(), new Integer());
         $result = $v->validate(array('a', 'b', 'c', 'd', 'e'));
         $this->assertTrue($result);
         $result = $v->check(array('a', 'b', 'c', 'd', 'e'));
@@ -37,7 +37,7 @@ class EachTest extends \PHPUnit_Framework_TestCase
 
     public function testValidatorShouldPassWithOnlyKeyValidation()
     {
-        $v = new Each(null, new Int());
+        $v = new Each(null, new Integer());
         $result = $v->validate(array('a', 'b', 'c', 'd', 'e'));
         $this->assertTrue($result);
         $result = $v->check(array('a', 'b', 'c', 'd', 'e'));
@@ -75,7 +75,7 @@ class EachTest extends \PHPUnit_Framework_TestCase
      */
     public function testAssertShouldFailOnInvalidItem()
     {
-        $v = new Each(new Int());
+        $v = new Each(new Integer());
         $result = $v->assert(array('a', 2, 3, 4, 5));
         $this->assertFalse($result);
     }

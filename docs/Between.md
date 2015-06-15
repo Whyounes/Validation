@@ -6,9 +6,9 @@
 Validates ranges. Most simple example:
 
 ```php
-v::int()->between(10, 20)->validate(10); //true
-v::int()->between(10, 20)->validate(15); //true
-v::int()->between(10, 20)->validate(20); //true
+v::integer()->between(10, 20)->validate(10); //true
+v::integer()->between(10, 20)->validate(15); //true
+v::integer()->between(10, 20)->validate(20); //true
 ```
 
 The type as the first validator in a chain is a good practice,

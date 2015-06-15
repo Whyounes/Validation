@@ -13,7 +13,7 @@ In the sample above, validator returns true because 'foo' isn't an IP Address.
 You can negate complex, grouped or chained validators as well:
 
 ```php
-v::not(v::int()->positive())->validate(-1.5); //true
+v::not(v::integer()->positive())->validate(-1.5); //true
 ```
 
 Each other validation has custom messages for negated rules.

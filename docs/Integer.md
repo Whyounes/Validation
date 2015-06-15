@@ -1,12 +1,12 @@
-# Int
+# Integer
 
-- `v::int()`
+- `v::integer()`
 
 Validates if the input is an integer.
 
 ```php
-v::int()->validate('10'); //true
-v::int()->validate(10); //true
+v::integer()->validate('10'); //true
+v::integer()->validate(10); //true
 ```
 
 See also:

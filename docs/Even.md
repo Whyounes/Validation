@@ -5,10 +5,10 @@
 Validates an even number.
 
 ```php
-v::int()->even()->validate(2); //true
+v::integer()->even()->validate(2); //true
 ```
 
-Using `int()` before `even()` is a best practice.
+Using `integer()` before `even()` is a best practice.
 
 See also
 
