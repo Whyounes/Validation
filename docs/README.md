@@ -85,7 +85,7 @@ $usernameValidator->validate('#$%');                //false
 
 ## Exception Types
 
-* `Repect\Validation\Exceptions\ExceptionInterface`:
+* `Respect\Validation\Exceptions\ExceptionInterface`:
     * All exceptions implement this interface;
 * `Respect\Validation\Exceptions\ValidationExceptionInterface`:
     * Extends the `Repect\Validation\Exceptions\ExceptionInterface` interface
